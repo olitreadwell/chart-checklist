@@ -18,7 +18,15 @@ Use this workflow when a chart, map, dashboard, or 3D data view needs a review. 
 
 ### 1. Load the rules
 
-From this repo:
+The installable skill ships `rules.json` beside this file. Read it first.
+
+If you have the full repo, `rules/rules.json` is the same file. If neither is available, fetch:
+
+```text
+https://raw.githubusercontent.com/olitreadwell/chart-checklist/main/rules/rules.json
+```
+
+When the repo is available, you can also query it:
 
 ```sh
 node scripts/query-rules.mjs --tier critical --json
@@ -26,7 +34,7 @@ node scripts/query-rules.mjs --category accessibility
 node scripts/query-rules.mjs --id D3 --id A3 --id C2
 ```
 
-If the repo is not available, read `rules/rules.json`.
+Do not call the query script from an installed skill. The installer copies only the skill folder, so use the bundled `rules.json` there.
 
 **Done when:** you have the rule IDs that apply to the artifact, with critical rules first.
 

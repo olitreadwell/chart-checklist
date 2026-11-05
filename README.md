@@ -33,6 +33,7 @@ Where the sources disagree, this repo records the choice instead of presenting i
 - **Choosing a chart type:** open the [relationship map](docs/relationship-map.md).
 - **Reviewing a map:** open the [map review](checklists/map-review.md).
 - **Reviewing a 3D or interactive view:** open the [interactive and 3D review](checklists/interactive-3d.md).
+- **Using an AI builder:** open the [AI builder quickstart](AI-BUILDER-QUICKSTART.md) or copy the [chart review prompt](prompts/chart-review.md).
 - **Running an agent:** read `skills/chart-checklist/SKILL.md` and use the [agent review workflow](checklists/agent-review.md).
 - **Adding a rule:** read `CONTRIBUTING.md` and run `npm run check`.
 
@@ -48,6 +49,14 @@ A rule can pass, fail, or not apply. A not-applicable result needs a reason. A b
 
 The corpus is plain JSON and Markdown. No server is needed.
 
+Install the skill globally when your tool supports skills:
+
+```sh
+npx skills add olitreadwell/chart-checklist --skill chart-checklist -g -y
+```
+
+The installed folder includes `rules.json`, so the skill does not depend on the rest of the repo. If your AI builder does not support skills, use the [AI builder quickstart](AI-BUILDER-QUICKSTART.md) and the [paste-ready prompt](prompts/chart-review.md).
+
 ```sh
 node scripts/query-rules.mjs --tier critical --json
 node scripts/query-rules.mjs --category accessibility
@@ -57,9 +66,10 @@ node scripts/query-rules.mjs --id D3 --id A3
 
 Agent entry points:
 
-- `rules/rules.json` holds every rule, its sources, and its related IDs.
+- `rules/rules.json` holds every rule, its sources, and its related IDs. The installable skill ships the same file at `skills/chart-checklist/rules.json`.
 - `skills/chart-checklist/SKILL.md` holds the review workflow.
 - `checklists/agent-review.md` holds the short loop and the report shape.
+- `prompts/chart-review.md` is the paste-ready prompt for tools without skill installs.
 - `llms.txt` points at the same files without the prose.
 
 An agent report uses one row per chart per rule:

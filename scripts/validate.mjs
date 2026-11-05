@@ -11,6 +11,7 @@ import { validateChecklists } from './lib/validate-checklists.mjs';
 import { validateRules } from './lib/validate-rules.mjs';
 import { buildReadmeBlock, extractReadmeBlock } from './lib/generate.mjs';
 import { checkRelativeLinks } from './lib/check-links.mjs';
+import { validateSkillBundle } from './lib/validate-skill.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const errors = [];
@@ -20,6 +21,9 @@ errors.push(...ruleResult.errors);
 
 const checklistResult = validateChecklists({ rules: RULES, checklists: CHECKLISTS });
 errors.push(...checklistResult.errors);
+
+const skillResult = await validateSkillBundle({ root: ROOT, expectedRuleCount: RULES.length });
+errors.push(...skillResult.errors);
 
 async function collectMarkdown(relativeDir) {
   const found = [];
@@ -45,11 +49,13 @@ try {
 
 const markdownFiles = [
   'README.md',
+  'AI-BUILDER-QUICKSTART.md',
   'CONTRIBUTING.md',
   'AGENTS.md',
   'CLAUDE.md',
   ...(await collectMarkdown('docs')),
   ...(await collectMarkdown('checklists')),
+  ...(await collectMarkdown('prompts')),
   ...(await collectMarkdown('skills')),
 ];
 errors.push(...(await checkRelativeLinks({ root: ROOT, files: markdownFiles })));

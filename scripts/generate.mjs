@@ -42,6 +42,10 @@ async function main(argv) {
 
   const outputs = new Map();
   outputs.set('rules/rules.json', normalize(buildRulesJson({ rules: RULES, categories: CATEGORIES, sources: SOURCES })));
+  outputs.set(
+    'skills/chart-checklist/rules.json',
+    normalize(buildRulesJson({ rules: RULES, categories: CATEGORIES, sources: SOURCES })),
+  );
   outputs.set('docs/sources.md', normalize(buildSourcesDoc(SOURCES)));
 
   for (const category of CATEGORIES) {

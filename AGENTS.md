@@ -28,7 +28,7 @@ Chart Checklist is a Markdown and JSON rule corpus for chart review. It has no r
 - `rules/sources.mjs` holds source titles and URLs.
 - `rules/categories.mjs` holds category order and labels.
 - `checklists/index.mjs` holds curated workflows.
-- `rules/rules.json`, `docs/rules/*.md`, `docs/sources.md`, `checklists/*.md`, and the README catalog are generated. Do not edit them by hand.
+- `rules/rules.json`, `skills/chart-checklist/rules.json`, `docs/rules/*.md`, `docs/sources.md`, `checklists/*.md`, and the README catalog are generated. Do not edit them by hand.
 
 ## Commands
 

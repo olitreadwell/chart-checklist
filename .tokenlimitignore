@@ -1,2 +1,4 @@
 # Generated corpus. Large by design, generated from rules/data/.
 rules/rules.json
+# Generated copy shipped inside the installable skill folder.
+skills/chart-checklist/rules.json

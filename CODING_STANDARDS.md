@@ -28,6 +28,7 @@ Project rules for this repo. The global baseline is `~/.agents/standards/CODING_
 Do not edit these by hand:
 
 - `rules/rules.json`
+- `skills/chart-checklist/rules.json`
 - `docs/rules/*.md`
 - `docs/sources.md`
 - `checklists/*.md`

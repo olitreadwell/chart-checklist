@@ -8,7 +8,10 @@
 - rules/rules.json: the machine-readable rule corpus with sources
 - rules/data/: the source of truth for each category
 - skills/chart-checklist/SKILL.md: the agent review workflow
+- skills/chart-checklist/rules.json: the rule corpus bundled with the installed skill
 - checklists/agent-review.md: the short agent loop and report shape
+- AI-BUILDER-QUICKSTART.md: the no-terminal path for AI builders
+- prompts/chart-review.md: a paste-ready chart review prompt
 - docs/checks.md: what each check mechanism can prove
 - docs/relationship-map.md: the controlled relationship list used by E1
 - docs/conflicts.md: source disagreements and the rule choice
