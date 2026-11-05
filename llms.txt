@@ -1,0 +1,21 @@
+# Chart Checklist
+
+> A chart and data visualisation quality checklist for humans and AI agents. Rules cover honesty, encoding, colour, accessibility, layout, states, narrative, interaction and 3D, maps, and process.
+
+## Core files
+
+- README.md: overview and the full checklist
+- rules/rules.json: the machine-readable rule corpus with sources
+- rules/data/: the source of truth for each category
+- skills/chart-checklist/SKILL.md: the agent review workflow
+- checklists/agent-review.md: the short agent loop and report shape
+- docs/checks.md: what each check mechanism can prove
+- docs/relationship-map.md: the controlled relationship list used by E1
+- docs/conflicts.md: source disagreements and the rule choice
+- docs/frontend-handoff.md: which repo owns a finding
+- docs/other-checklists.md: related checklists and sources
+- docs/chartability-map.md: the Chartability mapping
+
+## Use
+
+Run `node scripts/query-rules.mjs --tier critical --json` for the blocking rules. Record pass, fail, or n/a for every rule. A blank result is a failure. Hand page-level issues to the Front-End Checklist.

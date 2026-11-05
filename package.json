@@ -1,0 +1,24 @@
+{
+  "name": "chart-checklist",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A chart and data visualisation quality checklist for humans and AI agents.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "generate": "node scripts/generate.mjs",
+    "check": "node scripts/validate.mjs && node scripts/generate.mjs --check && node --test",
+    "test": "node --test",
+    "query": "node scripts/query-rules.mjs"
+  },
+  "keywords": [
+    "charts",
+    "data-visualisation",
+    "accessibility",
+    "checklist",
+    "ai-agents"
+  ],
+  "license": "MIT"
+}

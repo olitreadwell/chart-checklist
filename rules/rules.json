@@ -1,0 +1,2736 @@
+{
+  "version": 1,
+  "generatedBy": "npm run generate",
+  "counts": {
+    "rules": 96,
+    "categories": 10,
+    "critical": 29,
+    "required": 56,
+    "recommended": 11
+  },
+  "categories": [
+    {
+      "id": "data-honesty",
+      "letter": "D",
+      "title": "Data honesty",
+      "order": 1,
+      "blurb": "The number is what it says it is, and the reader can tell where it came from."
+    },
+    {
+      "id": "encoding",
+      "letter": "E",
+      "title": "Encoding and chart choice",
+      "order": 2,
+      "blurb": "The mark matches the relationship, and the chart does not hide a simpler reading."
+    },
+    {
+      "id": "colour",
+      "letter": "C",
+      "title": "Colour and legibility",
+      "order": 3,
+      "blurb": "Colour carries meaning without becoming the only carrier, in light and dark mode."
+    },
+    {
+      "id": "accessibility",
+      "letter": "A",
+      "title": "Accessibility",
+      "order": 4,
+      "blurb": "A screen reader, keyboard, or low-vision reader can reach the same finding."
+    },
+    {
+      "id": "layout",
+      "letter": "R",
+      "title": "Layout and responsiveness",
+      "order": 5,
+      "blurb": "The chart survives narrow screens, zoom, loading, and print without losing labels."
+    },
+    {
+      "id": "states",
+      "letter": "S",
+      "title": "States and failure",
+      "order": 6,
+      "blurb": "Empty, partial, stale, flat, and broken data each get a state a reader can understand."
+    },
+    {
+      "id": "narrative",
+      "letter": "N",
+      "title": "Narrative and context",
+      "order": 7,
+      "blurb": "The title, note, and surrounding text state the finding and the limits of the data."
+    },
+    {
+      "id": "interaction",
+      "letter": "I",
+      "title": "Interaction, animation and 3D",
+      "order": 8,
+      "blurb": "Exploratory views stay operable, understandable, and still when the reader asks."
+    },
+    {
+      "id": "maps",
+      "letter": "M",
+      "title": "Maps and spatial views",
+      "order": 9,
+      "blurb": "Geography carries values without hiding scale, vintage, coverage, or missing areas."
+    },
+    {
+      "id": "process",
+      "letter": "P",
+      "title": "Process and delivery",
+      "order": 10,
+      "blurb": "Every chart has an owner, an evidence trail, and a check that runs before release."
+    }
+  ],
+  "rules": [
+    {
+      "id": "D1",
+      "title": "Name the measure, geography, and period",
+      "category": "data-honesty",
+      "tier": "required",
+      "check": "The subtitle or deck names the measure, the geography, and the period.",
+      "fix": "Add the missing element. Put the measure first, then the place, then the dates.",
+      "mechanisms": [
+        "unit",
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "ONS",
+          "title": "ONS Service Manual: Data visualisation",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation"
+        },
+        {
+          "key": "EVER",
+          "title": "Evergreen Data: Data Visualization Checklist",
+          "url": "https://stephanieevergreen.com/wp-content/uploads/2024/08/Data-Viz-Checklist-2024.pdf"
+        }
+      ],
+      "related": [
+        "N1"
+      ]
+    },
+    {
+      "id": "D2",
+      "title": "Put units on every quantitative value",
+      "category": "data-honesty",
+      "tier": "required",
+      "check": "Every quantitative axis, tooltip, and value label carries its unit. Categorical axes are exempt.",
+      "fix": "Add the unit once to the axis title and to each tooltip or label that stands alone.",
+      "mechanisms": [
+        "unit"
+      ],
+      "sources": [
+        {
+          "key": "AF_CHARTS",
+          "title": "GOV.UK Analysis Function: Charts, a checklist",
+          "url": "https://analysisfunction.civilservice.gov.uk/policy-store/charts-a-checklist/"
+        },
+        {
+          "key": "ONS_AXES",
+          "title": "ONS: Axes and gridlines",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation/guidance/axes-and-gridlines"
+        }
+      ],
+      "related": [
+        "C10"
+      ]
+    },
+    {
+      "id": "D3",
+      "title": "Show the source and as-of date",
+      "category": "data-honesty",
+      "tier": "critical",
+      "check": "The chart shows its source and as-of date, or links to a source block in the same section with both fields.",
+      "fix": "Add a source line with the publisher, dataset, and date. Link to the fuller source block when one exists.",
+      "mechanisms": [
+        "data",
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "ONS",
+          "title": "ONS Service Manual: Data visualisation",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation"
+        },
+        {
+          "key": "AF_CHARTS",
+          "title": "GOV.UK Analysis Function: Charts, a checklist",
+          "url": "https://analysisfunction.civilservice.gov.uk/policy-store/charts-a-checklist/"
+        }
+      ],
+      "related": [
+        "S6",
+        "M4"
+      ]
+    },
+    {
+      "id": "D4",
+      "title": "Start bars and areas at zero",
+      "category": "data-honesty",
+      "tier": "critical",
+      "check": "Bars and areas have a zero baseline.",
+      "fix": "Set the value axis minimum to zero for bar and area marks, or change to a mark that can crop.",
+      "mechanisms": [
+        "unit"
+      ],
+      "sources": [
+        {
+          "key": "AF_CHARTS",
+          "title": "GOV.UK Analysis Function: Charts, a checklist",
+          "url": "https://analysisfunction.civilservice.gov.uk/policy-store/charts-a-checklist/"
+        },
+        {
+          "key": "ONS_AXES",
+          "title": "ONS: Axes and gridlines",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation/guidance/axes-and-gridlines"
+        }
+      ],
+      "related": [
+        "D11"
+      ]
+    },
+    {
+      "id": "D5",
+      "title": "Label a cropped axis and leave room before the first point",
+      "category": "data-honesty",
+      "tier": "required",
+      "check": "A cropped line or scatter axis states its actual domain and leaves a gap of 25% to 33% of plot height or width before the first point.",
+      "fix": "Show the axis start value and add the gap. If the crop changes the reading, use zero instead.",
+      "mechanisms": [
+        "unit",
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "ONS_AXES",
+          "title": "ONS: Axes and gridlines",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation/guidance/axes-and-gridlines"
+        },
+        {
+          "key": "D2V",
+          "title": "Data-to-Viz",
+          "url": "https://www.data-to-viz.com/"
+        }
+      ],
+      "related": [
+        "D4",
+        "D11"
+      ]
+    },
+    {
+      "id": "D6",
+      "title": "Remove the reader-facing second y-axis",
+      "category": "data-honesty",
+      "tier": "critical",
+      "check": "No chart asks the reader to interpret two y-axes. A rendering helper with no second scale needs a recorded exception.",
+      "fix": "Split into two charts, index both series to a common base, or label the secondary series directly without a second axis.",
+      "mechanisms": [
+        "unit",
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "ONS_TYPES",
+          "title": "ONS: Choosing a chart type",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation/chart-types/choosing-a-chart-type"
+        },
+        {
+          "key": "EVER",
+          "title": "Evergreen Data: Data Visualization Checklist",
+          "url": "https://stephanieevergreen.com/wp-content/uploads/2024/08/Data-Viz-Checklist-2024.pdf"
+        }
+      ],
+      "related": [
+        "E1"
+      ]
+    },
+    {
+      "id": "D7",
+      "title": "State the denominator or population base",
+      "category": "data-honesty",
+      "tier": "required",
+      "check": "A rate states its denominator. A place comparison states the population base.",
+      "fix": "Add the denominator to the subtitle, note, or tooltip. Name the population and the year.",
+      "mechanisms": [
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "AF_DISCLOSURE",
+          "title": "GOV.UK Analysis Function: Statistical disclosure control for tables",
+          "url": "https://analysisfunction.civilservice.gov.uk/policy-store/statistical-disclosure-control-for-tables-produced-from-surveys/"
+        },
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        }
+      ],
+      "related": [
+        "D1"
+      ]
+    },
+    {
+      "id": "D8",
+      "title": "Suppress cells below the publisher threshold",
+      "category": "data-honesty",
+      "tier": "required",
+      "check": "A cell below the publisher disclosure threshold is suppressed. The threshold belongs to the source. Where none is given, the default is 5.",
+      "fix": "Apply the source threshold. If the publisher gives none, suppress cells under 5 and state the rule.",
+      "mechanisms": [
+        "data",
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "AF_DISCLOSURE",
+          "title": "GOV.UK Analysis Function: Statistical disclosure control for tables",
+          "url": "https://analysisfunction.civilservice.gov.uk/policy-store/statistical-disclosure-control-for-tables-produced-from-surveys/"
+        },
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        }
+      ],
+      "related": [
+        "D10"
+      ]
+    },
+    {
+      "id": "D9",
+      "title": "Show published uncertainty where it changes the reading",
+      "category": "data-honesty",
+      "tier": "required",
+      "check": "Uncertainty appears when the source publishes it. Bars do not use error bars. A dot plot with ranges or a line with a band is used instead.",
+      "fix": "Add a range, band, or interval and explain it in plain words. Keep error bars off bar and column marks.",
+      "mechanisms": [
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "ONS_UNCERTAINTY",
+          "title": "ONS: Showing uncertainty in charts",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation/guidance/showing-uncertainty-in-charts"
+        },
+        {
+          "key": "AF_CHARTS",
+          "title": "GOV.UK Analysis Function: Charts, a checklist",
+          "url": "https://analysisfunction.civilservice.gov.uk/policy-store/charts-a-checklist/"
+        },
+        {
+          "key": "WEISS",
+          "title": "Weissgerber et al.: Small-sample data visualisation",
+          "url": "https://doi.org/10.1371/journal.pbio.1002128"
+        }
+      ],
+      "related": [
+        "N2"
+      ]
+    },
+    {
+      "id": "D10",
+      "title": "Keep rounding within source precision",
+      "category": "data-honesty",
+      "tier": "required",
+      "check": "Displayed values do not exceed source precision, and displayed totals agree within half of the last displayed digit.",
+      "fix": "Round to the source precision. Recompute totals from the rounded values or add a rounding note.",
+      "mechanisms": [
+        "data"
+      ],
+      "sources": [
+        {
+          "key": "ONS",
+          "title": "ONS Service Manual: Data visualisation",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation"
+        },
+        {
+          "key": "EVER",
+          "title": "Evergreen Data: Data Visualization Checklist",
+          "url": "https://stephanieevergreen.com/wp-content/uploads/2024/08/Data-Viz-Checklist-2024.pdf"
+        }
+      ],
+      "related": [
+        "D8"
+      ]
+    },
+    {
+      "id": "D11",
+      "title": "Explain a non-zero baseline",
+      "category": "data-honesty",
+      "tier": "required",
+      "check": "A line or scatter chart with a non-zero baseline states why zero was not used.",
+      "fix": "Add one sentence to the note or subtitle that names the reason for the crop.",
+      "mechanisms": [
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "D2V",
+          "title": "Data-to-Viz",
+          "url": "https://www.data-to-viz.com/"
+        },
+        {
+          "key": "ONS_AXES",
+          "title": "ONS: Axes and gridlines",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation/guidance/axes-and-gridlines"
+        }
+      ],
+      "related": [
+        "D4",
+        "D5"
+      ]
+    },
+    {
+      "id": "D12",
+      "title": "Distinguish missing periods from assumptions",
+      "category": "data-honesty",
+      "tier": "required",
+      "check": "Missing periods render as a gap or a dashed assumed segment. Observations are visually distinct from assumptions.",
+      "fix": "Use a gap for missing data and a dashed segment for an assumption. Add a legend or note for the dash.",
+      "mechanisms": [
+        "unit",
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "DW_MISSING",
+          "title": "Datawrapper: Missing data in line charts",
+          "url": "https://www.datawrapper.de/academy/missing-data-in-line-charts"
+        },
+        {
+          "key": "ONS",
+          "title": "ONS Service Manual: Data visualisation",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation"
+        }
+      ],
+      "related": [
+        "S8"
+      ]
+    },
+    {
+      "id": "E1",
+      "title": "Declare the relationship and match the chart type",
+      "category": "encoding",
+      "tier": "required",
+      "check": "The chart declares one relationship from the controlled list, and the rendered chart type appears in that relationship row.",
+      "fix": "Add the relationship from docs/relationship-map.md to the chart metadata. Change the chart type or record an exception with a reason and a link.",
+      "mechanisms": [
+        "unit",
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "FT",
+          "title": "FT Visual Vocabulary",
+          "url": "https://ft-interactive.github.io/visual-vocabulary/"
+        },
+        {
+          "key": "ONS_TYPES",
+          "title": "ONS: Choosing a chart type",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation/chart-types/choosing-a-chart-type"
+        }
+      ],
+      "related": [
+        "E2",
+        "E9"
+      ]
+    },
+    {
+      "id": "E2",
+      "title": "Use position or length for precise comparison",
+      "category": "encoding",
+      "tier": "required",
+      "check": "Position or length carries the value when a precise comparison matters. No 3D and no area for precise ranking.",
+      "fix": "Replace angle, area, or 3D encoding with a bar, dot, or line. Keep decoration out of the data mark.",
+      "mechanisms": [
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "CM",
+          "title": "Cleveland and McGill: Graphical perception",
+          "url": "https://doi.org/10.1080/01621459.1984.10478080"
+        },
+        {
+          "key": "EVER",
+          "title": "Evergreen Data: Data Visualization Checklist",
+          "url": "https://stephanieevergreen.com/wp-content/uploads/2024/08/Data-Viz-Checklist-2024.pdf"
+        }
+      ],
+      "related": [
+        "E1"
+      ]
+    },
+    {
+      "id": "E3",
+      "title": "Declare the order and render it",
+      "category": "encoding",
+      "tier": "required",
+      "check": "The chart declares its order as value, natural, or alphabetical, and the rendered order matches the declaration.",
+      "fix": "Set the declared sort in the chart config. If the order is editorial, name the rule in the note.",
+      "mechanisms": [
+        "unit"
+      ],
+      "sources": [
+        {
+          "key": "EVER",
+          "title": "Evergreen Data: Data Visualization Checklist",
+          "url": "https://stephanieevergreen.com/wp-content/uploads/2024/08/Data-Viz-Checklist-2024.pdf"
+        },
+        {
+          "key": "ONS_TYPES",
+          "title": "ONS: Choosing a chart type",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation/chart-types/choosing-a-chart-type"
+        }
+      ],
+      "related": [
+        "E10"
+      ]
+    },
+    {
+      "id": "E4",
+      "title": "Keep categorical series to five or fewer",
+      "category": "encoding",
+      "tier": "required",
+      "check": "A chart has five or fewer categorical series. Six or seven need a recorded exception. More than seven fails.",
+      "fix": "Group small series into Other, use small multiples, or let the reader filter. Record any exception.",
+      "mechanisms": [
+        "unit",
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "ONS_COLOURS",
+          "title": "ONS: Using colours in charts",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation/colours/using-colours-in-charts"
+        },
+        {
+          "key": "AF_CHARTS",
+          "title": "GOV.UK Analysis Function: Charts, a checklist",
+          "url": "https://analysisfunction.civilservice.gov.uk/policy-store/charts-a-checklist/"
+        },
+        {
+          "key": "DW_COLOUR",
+          "title": "Datawrapper: Colours in data visualisation",
+          "url": "https://www.datawrapper.de/blog/colors"
+        }
+      ],
+      "related": [
+        "C6",
+        "E13"
+      ]
+    },
+    {
+      "id": "E5",
+      "title": "Label four or fewer series directly",
+      "category": "encoding",
+      "tier": "recommended",
+      "check": "Four or fewer series are labelled beside the marks instead of through a legend.",
+      "fix": "Place the series name at the end of each line or beside each group. Remove the legend when no longer needed.",
+      "mechanisms": [
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "EVER",
+          "title": "Evergreen Data: Data Visualization Checklist",
+          "url": "https://stephanieevergreen.com/wp-content/uploads/2024/08/Data-Viz-Checklist-2024.pdf"
+        },
+        {
+          "key": "ONS_TEXT",
+          "title": "ONS: Chart text",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation/guidance/chart-text"
+        }
+      ],
+      "related": [
+        "E4"
+      ]
+    },
+    {
+      "id": "E6",
+      "title": "Label a log scale and state its base",
+      "category": "encoding",
+      "tier": "required",
+      "check": "A log scale is labelled as logarithmic and states its base.",
+      "fix": "Add the scale name and base to the axis title or note. Use a linear scale when the log does not help.",
+      "mechanisms": [
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "D2V",
+          "title": "Data-to-Viz",
+          "url": "https://www.data-to-viz.com/"
+        },
+        {
+          "key": "ONS_AXES",
+          "title": "ONS: Axes and gridlines",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation/guidance/axes-and-gridlines"
+        }
+      ],
+      "related": [
+        "D2"
+      ]
+    },
+    {
+      "id": "E7",
+      "title": "Compare like with like",
+      "category": "encoding",
+      "tier": "required",
+      "check": "Comparisons use the same period, definition, and denominator on both sides.",
+      "fix": "Align the periods and definitions. If they differ, state the difference and why the comparison still holds.",
+      "mechanisms": [
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "ONS",
+          "title": "ONS Service Manual: Data visualisation",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation"
+        },
+        {
+          "key": "AF_CHARTS",
+          "title": "GOV.UK Analysis Function: Charts, a checklist",
+          "url": "https://analysisfunction.civilservice.gov.uk/policy-store/charts-a-checklist/"
+        }
+      ],
+      "related": [
+        "D7"
+      ]
+    },
+    {
+      "id": "E8",
+      "title": "Cite the source for event annotations",
+      "category": "encoding",
+      "tier": "recommended",
+      "check": "Annotations for known events cite the event source.",
+      "fix": "Add the source and date to the annotation or its footnote.",
+      "mechanisms": [
+        "unit",
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "ONS_ANNOTATIONS",
+          "title": "ONS: Annotations",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation/guidance/annotations"
+        },
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        }
+      ],
+      "related": [
+        "N4"
+      ]
+    },
+    {
+      "id": "E9",
+      "title": "Offer a simpler alternative for a hard chart type",
+      "category": "encoding",
+      "tier": "recommended",
+      "check": "A chart type that is hard to read has a simpler alternative, such as a table or bar view.",
+      "fix": "Add a table view, a bar toggle, or a short summary that carries the same comparison.",
+      "mechanisms": [
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        },
+        {
+          "key": "USWDS",
+          "title": "USWDS: Data visualizations",
+          "url": "https://designsystem.digital.gov/components/data-visualizations/"
+        }
+      ],
+      "related": [
+        "A3",
+        "E1"
+      ]
+    },
+    {
+      "id": "E10",
+      "title": "Keep pie and doughnut slices honest",
+      "category": "encoding",
+      "tier": "required",
+      "check": "A pie or doughnut sums to 100% within rounding, has no negative values, and has five or fewer slices.",
+      "fix": "Use a bar chart, group small slices into Other, or remove the pie when the parts do not sum to a whole.",
+      "mechanisms": [
+        "unit"
+      ],
+      "sources": [
+        {
+          "key": "AF_CHARTS",
+          "title": "GOV.UK Analysis Function: Charts, a checklist",
+          "url": "https://analysisfunction.civilservice.gov.uk/policy-store/charts-a-checklist/"
+        },
+        {
+          "key": "ONS_PIE",
+          "title": "ONS: Pie and doughnut charts",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation/chart-types/pie-and-doughnut-charts"
+        }
+      ],
+      "related": [
+        "E3"
+      ]
+    },
+    {
+      "id": "E11",
+      "title": "Match data density to the question",
+      "category": "encoding",
+      "tier": "critical",
+      "check": "Data density suits the question. Individual labels are limited to 20 marks, and a dense chart offers aggregation, a filter, or a table.",
+      "fix": "Reduce marks, aggregate, add a filter, or provide a table. Keep the chart focused on one comparison.",
+      "mechanisms": [
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        },
+        {
+          "key": "USWDS",
+          "title": "USWDS: Data visualizations",
+          "url": "https://designsystem.digital.gov/components/data-visualizations/"
+        }
+      ],
+      "related": [
+        "E9",
+        "A13"
+      ]
+    },
+    {
+      "id": "E12",
+      "title": "Keep grouped bars to four categories",
+      "category": "encoding",
+      "tier": "required",
+      "check": "A clustered or stacked bar has four or fewer categories per group.",
+      "fix": "Split the chart, group small categories, or switch to small multiples.",
+      "mechanisms": [
+        "unit"
+      ],
+      "sources": [
+        {
+          "key": "AF_CHARTS",
+          "title": "GOV.UK Analysis Function: Charts, a checklist",
+          "url": "https://analysisfunction.civilservice.gov.uk/policy-store/charts-a-checklist/"
+        },
+        {
+          "key": "ONS_CLUSTERED",
+          "title": "ONS: Clustered bar charts",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation/chart-types/clustered-bar-chart"
+        },
+        {
+          "key": "ONS_STACKED",
+          "title": "ONS: Stacked bar charts",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation/chart-types/stacked-bar-charts"
+        }
+      ],
+      "related": [
+        "E4"
+      ]
+    },
+    {
+      "id": "E13",
+      "title": "Share scales across small multiples",
+      "category": "encoding",
+      "tier": "required",
+      "check": "Small multiples share scale, order, and colour meaning, and the shared scale is labelled once.",
+      "fix": "Set one domain per measure, keep the same series order, and label the shared axis or legend.",
+      "mechanisms": [
+        "unit",
+        "visual"
+      ],
+      "sources": [
+        {
+          "key": "ONS_TYPES",
+          "title": "ONS: Choosing a chart type",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation/chart-types/choosing-a-chart-type"
+        },
+        {
+          "key": "EVER",
+          "title": "Evergreen Data: Data Visualization Checklist",
+          "url": "https://stephanieevergreen.com/wp-content/uploads/2024/08/Data-Viz-Checklist-2024.pdf"
+        }
+      ],
+      "related": [
+        "E4",
+        "E12"
+      ]
+    },
+    {
+      "id": "C1",
+      "title": "Keep chart text at 12px or larger",
+      "category": "colour",
+      "tier": "critical",
+      "check": "All rendered chart text is at least 12 CSS pixels, about 9 points.",
+      "fix": "Raise the font size in the chart theme and the SVG text rule. Recheck at 320px.",
+      "mechanisms": [
+        "unit",
+        "e2e"
+      ],
+      "sources": [
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        },
+        {
+          "key": "WCAG22",
+          "title": "Web Content Accessibility Guidelines 2.2",
+          "url": "https://www.w3.org/TR/WCAG22/"
+        }
+      ],
+      "related": [
+        "R2"
+      ]
+    },
+    {
+      "id": "C2",
+      "title": "Meet text contrast ratios",
+      "category": "colour",
+      "tier": "critical",
+      "check": "Text meets 4.5:1 contrast, or 3:1 at 24px and above, or 18.66px bold and above.",
+      "fix": "Change the text or background token until the ratio passes in light and dark mode.",
+      "mechanisms": [
+        "axe"
+      ],
+      "sources": [
+        {
+          "key": "WCAG22",
+          "title": "Web Content Accessibility Guidelines 2.2",
+          "url": "https://www.w3.org/TR/WCAG22/"
+        },
+        {
+          "key": "AF_COLOURS",
+          "title": "GOV.UK Analysis Function: Data visualisation colours in charts",
+          "url": "https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/"
+        }
+      ],
+      "related": [
+        "C8"
+      ]
+    },
+    {
+      "id": "C3",
+      "title": "Meet 3:1 for marks against adjacent colours",
+      "category": "colour",
+      "tier": "critical",
+      "check": "Data marks meet 3:1 contrast against adjacent colours and the background.",
+      "fix": "Darken or lighten the mark, add a boundary, or change the adjacent fill.",
+      "mechanisms": [
+        "unit",
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "WCAG22",
+          "title": "Web Content Accessibility Guidelines 2.2",
+          "url": "https://www.w3.org/TR/WCAG22/"
+        },
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        }
+      ],
+      "related": [
+        "C4",
+        "C8"
+      ]
+    },
+    {
+      "id": "C4",
+      "title": "Separate touching fills",
+      "category": "colour",
+      "tier": "required",
+      "check": "Touching fills have a 1px separator or a 3:1 boundary.",
+      "fix": "Add a background-coloured stroke or increase the contrast between the fills.",
+      "mechanisms": [
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        },
+        {
+          "key": "AF_COLOURS",
+          "title": "GOV.UK Analysis Function: Data visualisation colours in charts",
+          "url": "https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/"
+        }
+      ],
+      "related": [
+        "C3"
+      ]
+    },
+    {
+      "id": "C5",
+      "title": "Never use colour as the only channel",
+      "category": "colour",
+      "tier": "critical",
+      "check": "Colour is not the only channel. Texture, shape, dash, or a direct label carries the same meaning.",
+      "fix": "Add a second channel to every series or category, and check it in grayscale.",
+      "mechanisms": [
+        "unit",
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "WCAG22",
+          "title": "Web Content Accessibility Guidelines 2.2",
+          "url": "https://www.w3.org/TR/WCAG22/"
+        },
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        }
+      ],
+      "related": [
+        "C6",
+        "M5"
+      ]
+    },
+    {
+      "id": "C6",
+      "title": "Check the palette under colour vision deficiency",
+      "category": "colour",
+      "tier": "required",
+      "check": "The palette survives protanopia, deuteranopia, tritanopia, and achromatopsia simulation with distinguishable lightness.",
+      "fix": "Change the palette to vary lightness as well as hue. Avoid red-green and yellow-blue pairs.",
+      "mechanisms": [
+        "unit",
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        },
+        {
+          "key": "DW_COLOUR",
+          "title": "Datawrapper: Colours in data visualisation",
+          "url": "https://www.datawrapper.de/blog/colors"
+        }
+      ],
+      "related": [
+        "C5"
+      ]
+    },
+    {
+      "id": "C7",
+      "title": "Use sequential and diverging palettes only for ordered data",
+      "category": "colour",
+      "tier": "required",
+      "check": "Sequential and diverging palettes are used only for ordered data. Categorical data uses a categorical palette.",
+      "fix": "Swap the palette to a categorical set, or reorder the data if the sequence is real.",
+      "mechanisms": [
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "AF_COLOURS",
+          "title": "GOV.UK Analysis Function: Data visualisation colours in charts",
+          "url": "https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/"
+        },
+        {
+          "key": "DW_COLOUR",
+          "title": "Datawrapper: Colours in data visualisation",
+          "url": "https://www.datawrapper.de/blog/colors"
+        }
+      ],
+      "related": [
+        "C6"
+      ]
+    },
+    {
+      "id": "C8",
+      "title": "Repeat contrast checks in dark mode",
+      "category": "colour",
+      "tier": "required",
+      "check": "C2 and C3 pass again in dark mode. Text passes through axe and marks pass the token contrast test.",
+      "fix": "Add dark tokens for text, gridlines, marks, and focus. Run the same contrast checks in both themes.",
+      "mechanisms": [
+        "axe",
+        "unit",
+        "visual"
+      ],
+      "sources": [
+        {
+          "key": "DW_DARK",
+          "title": "Datawrapper: Dark mode in embedded visualisations",
+          "url": "https://www.datawrapper.de/academy/dark-mode-in-embedded-datawrapper-visualizations"
+        },
+        {
+          "key": "WCAG22",
+          "title": "Web Content Accessibility Guidelines 2.2",
+          "url": "https://www.w3.org/TR/WCAG22/"
+        }
+      ],
+      "related": [
+        "C2",
+        "C3",
+        "C9"
+      ]
+    },
+    {
+      "id": "C9",
+      "title": "Survive forced-colors and high contrast",
+      "category": "colour",
+      "tier": "critical",
+      "check": "Windows high contrast and forced-colors keep marks, labels, and focus visible.",
+      "fix": "Use system colours or forced-colors fallbacks for marks, text, and focus. Test with forced colors enabled.",
+      "mechanisms": [
+        "visual",
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        },
+        {
+          "key": "WCAG22",
+          "title": "Web Content Accessibility Guidelines 2.2",
+          "url": "https://www.w3.org/TR/WCAG22/"
+        }
+      ],
+      "related": [
+        "C8",
+        "A5"
+      ]
+    },
+    {
+      "id": "C10",
+      "title": "Use round, labelled gridlines",
+      "category": "colour",
+      "tier": "required",
+      "check": "Gridlines are round-numbered and labelled, with no minor gridlines. Use 6 to 10 on desktop and 3 to 6 on mobile.",
+      "fix": "Set the tick count and round the domain. Remove minor gridlines and lighten the remaining lines.",
+      "mechanisms": [
+        "unit",
+        "visual"
+      ],
+      "sources": [
+        {
+          "key": "ONS_AXES",
+          "title": "ONS: Axes and gridlines",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation/guidance/axes-and-gridlines"
+        },
+        {
+          "key": "AF_CHARTS",
+          "title": "GOV.UK Analysis Function: Charts, a checklist",
+          "url": "https://analysisfunction.civilservice.gov.uk/policy-store/charts-a-checklist/"
+        }
+      ],
+      "related": [
+        "D2"
+      ]
+    },
+    {
+      "id": "C11",
+      "title": "Avoid flashing and red large-area animation",
+      "category": "colour",
+      "tier": "critical",
+      "check": "Nothing flashes more than three times per second, and no animation uses red as a large-area flash.",
+      "fix": "Remove the flash, lower the frequency, or replace the animation with a static state change.",
+      "mechanisms": [
+        "visual",
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "WCAG22",
+          "title": "Web Content Accessibility Guidelines 2.2",
+          "url": "https://www.w3.org/TR/WCAG22/"
+        },
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        }
+      ],
+      "related": [
+        "A8",
+        "I5"
+      ]
+    },
+    {
+      "id": "C12",
+      "title": "Use shared tokens and components",
+      "category": "colour",
+      "tier": "required",
+      "check": "Colours, type scale, and interaction patterns come from shared tokens and components. Chart code has no hard-coded values.",
+      "fix": "Move the value into a token or shared chart theme, then replace the local constant.",
+      "mechanisms": [
+        "unit",
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        },
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        }
+      ],
+      "related": [
+        "C8"
+      ]
+    },
+    {
+      "id": "A1",
+      "title": "Give the chart an image role and a short name",
+      "category": "accessibility",
+      "tier": "critical",
+      "check": "The chart has an image role and a short accessible name.",
+      "fix": "Add role=\"img\" and a name through aria-label or aria-labelledby. Keep the name short and specific.",
+      "mechanisms": [
+        "unit"
+      ],
+      "sources": [
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        },
+        {
+          "key": "WCAG22",
+          "title": "Web Content Accessibility Guidelines 2.2",
+          "url": "https://www.w3.org/TR/WCAG22/"
+        }
+      ],
+      "related": [
+        "A2",
+        "A3"
+      ]
+    },
+    {
+      "id": "A2",
+      "title": "State the finding in the accessible name and visible text",
+      "category": "accessibility",
+      "tier": "critical",
+      "check": "The accessible name states the finding, and a visible sentence states the same takeaway without requiring the chart.",
+      "fix": "Write one sentence with the finding. Use it for the visible summary and the accessible description.",
+      "mechanisms": [
+        "unit",
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        },
+        {
+          "key": "DW_ALT",
+          "title": "Datawrapper: Alternative descriptions for visualisations",
+          "url": "https://www.datawrapper.de/academy/how-to-write-good-alternative-descriptions-for-your-data-visualization"
+        }
+      ],
+      "related": [
+        "A1",
+        "N1"
+      ]
+    },
+    {
+      "id": "A3",
+      "title": "Provide a data table with the same values",
+      "category": "accessibility",
+      "tier": "critical",
+      "check": "A data table carries the same values, units, and series order as the chart, with a caption and header cells.",
+      "fix": "Add a caption, column headers, and every series in chart order. Keep the table in the DOM or behind a clear link.",
+      "mechanisms": [
+        "unit"
+      ],
+      "sources": [
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        },
+        {
+          "key": "W3C_COMPLEX",
+          "title": "W3C: Complex images",
+          "url": "https://www.w3.org/WAI/tutorials/images/complex/"
+        },
+        {
+          "key": "USWDS",
+          "title": "USWDS: Data visualizations",
+          "url": "https://designsystem.digital.gov/components/data-visualizations/"
+        }
+      ],
+      "related": [
+        "A1",
+        "S8"
+      ]
+    },
+    {
+      "id": "A4",
+      "title": "Make every interactive feature keyboard operable",
+      "category": "accessibility",
+      "tier": "critical",
+      "check": "Every interactive feature is reachable and operable with the keyboard, with no keyboard trap.",
+      "fix": "Use native controls where possible. Add key handlers for custom marks and a way out of every interaction.",
+      "mechanisms": [
+        "e2e"
+      ],
+      "sources": [
+        {
+          "key": "WCAG22",
+          "title": "Web Content Accessibility Guidelines 2.2",
+          "url": "https://www.w3.org/TR/WCAG22/"
+        },
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        }
+      ],
+      "related": [
+        "A13",
+        "I2"
+      ]
+    },
+    {
+      "id": "A5",
+      "title": "Keep focus visible and unobscured",
+      "category": "accessibility",
+      "tier": "critical",
+      "check": "Focus is not obscured, and the indicator is at least 2px with 3:1 contrast against its background.",
+      "fix": "Add a visible focus ring to every chart control. Remove overlays that cover the focused element.",
+      "mechanisms": [
+        "e2e"
+      ],
+      "sources": [
+        {
+          "key": "WCAG22",
+          "title": "Web Content Accessibility Guidelines 2.2",
+          "url": "https://www.w3.org/TR/WCAG22/"
+        },
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        }
+      ],
+      "related": [
+        "C9"
+      ]
+    },
+    {
+      "id": "A6",
+      "title": "Keep non-interactive marks out of the tab order",
+      "category": "accessibility",
+      "tier": "required",
+      "check": "Non-interactive marks are not in the tab order.",
+      "fix": "Remove tabindex from decorative and static marks. Put one tab stop on the chart, not on every mark.",
+      "mechanisms": [
+        "unit",
+        "e2e"
+      ],
+      "sources": [
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        },
+        {
+          "key": "HIGHCHARTS",
+          "title": "Highcharts accessibility module",
+          "url": "https://www.highcharts.com/docs/accessibility/accessibility-module"
+        }
+      ],
+      "related": [
+        "A13"
+      ]
+    },
+    {
+      "id": "A7",
+      "title": "Announce tooltips and status changes",
+      "category": "accessibility",
+      "tier": "required",
+      "check": "Tooltip and status changes are announced in a live region.",
+      "fix": "Add a polite live region for the active value and for loading, error, and update messages.",
+      "mechanisms": [
+        "unit",
+        "e2e"
+      ],
+      "sources": [
+        {
+          "key": "WCAG22",
+          "title": "Web Content Accessibility Guidelines 2.2",
+          "url": "https://www.w3.org/TR/WCAG22/"
+        },
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        }
+      ],
+      "related": [
+        "S2",
+        "I6"
+      ]
+    },
+    {
+      "id": "A8",
+      "title": "Let the reader reduce motion",
+      "category": "accessibility",
+      "tier": "critical",
+      "check": "Interaction-triggered motion can be reduced, and autoplaying animation over five seconds can be paused, stopped, or hidden.",
+      "fix": "Respect prefers-reduced-motion. Add pause and stop controls for any animation over five seconds.",
+      "mechanisms": [
+        "unit",
+        "e2e"
+      ],
+      "sources": [
+        {
+          "key": "WCAG22",
+          "title": "Web Content Accessibility Guidelines 2.2",
+          "url": "https://www.w3.org/TR/WCAG22/"
+        },
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        }
+      ],
+      "related": [
+        "C11",
+        "I5"
+      ]
+    },
+    {
+      "id": "A9",
+      "title": "Explain the purpose and the controls",
+      "category": "accessibility",
+      "tier": "critical",
+      "check": "Interaction instructions are visible, name the keyboard controls, and state what the chart is for.",
+      "fix": "Add a short instruction line beside the chart. Name the keys and the action they perform.",
+      "mechanisms": [
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        },
+        {
+          "key": "HIGHCHARTS",
+          "title": "Highcharts accessibility module",
+          "url": "https://www.highcharts.com/docs/accessibility/accessibility-module"
+        }
+      ],
+      "related": [
+        "N2",
+        "I8"
+      ]
+    },
+    {
+      "id": "A10",
+      "title": "Keep no value or comparison on hover alone",
+      "category": "accessibility",
+      "tier": "required",
+      "check": "No value or comparison exists only on hover.",
+      "fix": "Show key values in labels, the table, or a pinned detail panel. Treat hover as an extra.",
+      "mechanisms": [
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        },
+        {
+          "key": "DW_ACCESSIBLE",
+          "title": "Datawrapper: Accessible charts, maps and tables",
+          "url": "https://www.datawrapper.de/academy/how-we-make-sure-our-charts-maps-and-tables-are-accessible"
+        }
+      ],
+      "related": [
+        "A3",
+        "A7"
+      ]
+    },
+    {
+      "id": "A11",
+      "title": "Make changed state reproducible",
+      "category": "accessibility",
+      "tier": "recommended",
+      "check": "A changed state from filters or hidden series can be reproduced from the URL or a visible description.",
+      "fix": "Write filter state to the URL or show a short state summary the reader can copy.",
+      "mechanisms": [
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        },
+        {
+          "key": "ONS_INTERACTIVE",
+          "title": "ONS: Interactive charts and animations",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation/guidance/interactive-charts-and-animations"
+        }
+      ],
+      "related": [
+        "I4"
+      ]
+    },
+    {
+      "id": "A12",
+      "title": "Do not override assistive technology settings",
+      "category": "accessibility",
+      "tier": "critical",
+      "check": "Custom keyboard and touch controls do not override screen-reader or browser settings, and apply only while the chart has focus.",
+      "fix": "Scope key handlers to the focused chart. Do not capture global keys or block browser zoom and scroll.",
+      "mechanisms": [
+        "e2e",
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        },
+        {
+          "key": "WCAG22",
+          "title": "Web Content Accessibility Guidelines 2.2",
+          "url": "https://www.w3.org/TR/WCAG22/"
+        }
+      ],
+      "related": [
+        "A4"
+      ]
+    },
+    {
+      "id": "A13",
+      "title": "Use one tab stop for dense charts",
+      "category": "accessibility",
+      "tier": "critical",
+      "check": "A chart with more than 50 marks exposes one tab stop and reveals detail with arrow keys. Every mark is not a tab stop.",
+      "fix": "Make the chart one focusable group. Move detail with arrow keys and announce the active mark.",
+      "mechanisms": [
+        "e2e"
+      ],
+      "sources": [
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        },
+        {
+          "key": "HIGHCHARTS",
+          "title": "Highcharts accessibility module",
+          "url": "https://www.highcharts.com/docs/accessibility/accessibility-module"
+        }
+      ],
+      "related": [
+        "A4",
+        "A6",
+        "E11"
+      ]
+    },
+    {
+      "id": "A14",
+      "title": "Survive text spacing and font overrides",
+      "category": "accessibility",
+      "tier": "required",
+      "check": "Text spacing overrides and user font settings do not clip labels or hide data.",
+      "fix": "Let labels wrap or move. Avoid fixed-height text boxes and fixed-width axis gutters.",
+      "mechanisms": [
+        "e2e",
+        "visual"
+      ],
+      "sources": [
+        {
+          "key": "WCAG22",
+          "title": "Web Content Accessibility Guidelines 2.2",
+          "url": "https://www.w3.org/TR/WCAG22/"
+        },
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        }
+      ],
+      "related": [
+        "R2",
+        "R7"
+      ]
+    },
+    {
+      "id": "R1",
+      "title": "Avoid horizontal scroll at 320px",
+      "category": "layout",
+      "tier": "critical",
+      "check": "The chart container causes no horizontal scroll at 320 CSS pixels, equivalent to 400% zoom at 1280px.",
+      "fix": "Let the chart shrink, stack controls, or move the table below. Remove fixed pixel widths from the figure.",
+      "mechanisms": [
+        "e2e"
+      ],
+      "sources": [
+        {
+          "key": "WCAG22",
+          "title": "Web Content Accessibility Guidelines 2.2",
+          "url": "https://www.w3.org/TR/WCAG22/"
+        },
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        }
+      ],
+      "related": [
+        "R2",
+        "R8"
+      ]
+    },
+    {
+      "id": "R2",
+      "title": "Keep labels unclipped at three widths",
+      "category": "layout",
+      "tier": "required",
+      "check": "Labels are not clipped or overlapped at 320px, 768px, and 1280px.",
+      "fix": "Shorten labels, wrap them, move them to a direct label, or increase the axis gutter.",
+      "mechanisms": [
+        "visual",
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        },
+        {
+          "key": "ONS_TEXT",
+          "title": "ONS: Chart text",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation/guidance/chart-text"
+        }
+      ],
+      "related": [
+        "R1",
+        "A14"
+      ]
+    },
+    {
+      "id": "R3",
+      "title": "Keep pointer targets at 24px or larger",
+      "category": "layout",
+      "tier": "required",
+      "check": "Interactive targets are at least 24px, with 44px preferred.",
+      "fix": "Increase the hit area without enlarging the visible mark. Keep spacing between adjacent targets.",
+      "mechanisms": [
+        "e2e"
+      ],
+      "sources": [
+        {
+          "key": "WCAG22",
+          "title": "Web Content Accessibility Guidelines 2.2",
+          "url": "https://www.w3.org/TR/WCAG22/"
+        },
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        }
+      ],
+      "related": [
+        "A4"
+      ]
+    },
+    {
+      "id": "R4",
+      "title": "Reserve chart height before hydration",
+      "category": "layout",
+      "tier": "required",
+      "check": "The chart container reserves its height before hydration, and the measured height does not shift after hydration.",
+      "fix": "Set an aspect ratio or min-height on the figure. Render a skeleton with the same height.",
+      "mechanisms": [
+        "e2e"
+      ],
+      "sources": [
+        {
+          "key": "WEB_VITALS",
+          "title": "web.dev: Core Web Vitals",
+          "url": "https://web.dev/articles/vitals"
+        },
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        }
+      ],
+      "related": [
+        "I6"
+      ]
+    },
+    {
+      "id": "R5",
+      "title": "Lazy-load charts below the first viewport",
+      "category": "layout",
+      "tier": "recommended",
+      "check": "A chart below the first viewport is lazy loaded, and its request starts after the first viewport renders.",
+      "fix": "Load the chart component and data near the viewport. Keep the hero chart eager.",
+      "mechanisms": [
+        "e2e",
+        "lighthouse"
+      ],
+      "sources": [
+        {
+          "key": "WEB_VITALS",
+          "title": "web.dev: Core Web Vitals",
+          "url": "https://web.dev/articles/vitals"
+        },
+        {
+          "key": "LHCI",
+          "title": "Lighthouse CI configuration",
+          "url": "https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/configuration.md"
+        }
+      ],
+      "related": [
+        "R4",
+        "I6"
+      ]
+    },
+    {
+      "id": "R6",
+      "title": "Keep the chart in print",
+      "category": "layout",
+      "tier": "recommended",
+      "check": "The printed page keeps the chart, its title, and its source.",
+      "fix": "Add print styles for the figure. Avoid hiding the chart behind an interaction that print cannot reach.",
+      "mechanisms": [
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        }
+      ],
+      "related": [
+        "A3"
+      ]
+    },
+    {
+      "id": "R7",
+      "title": "Survive 200% text zoom",
+      "category": "layout",
+      "tier": "recommended",
+      "check": "The chart survives 200% text zoom without losing labels.",
+      "fix": "Use relative text sizes and flexible gutters. Let labels wrap or move to a second line.",
+      "mechanisms": [
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "WCAG22",
+          "title": "Web Content Accessibility Guidelines 2.2",
+          "url": "https://www.w3.org/TR/WCAG22/"
+        },
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        }
+      ],
+      "related": [
+        "A14",
+        "R2"
+      ]
+    },
+    {
+      "id": "R8",
+      "title": "Keep reading order with the visual order",
+      "category": "layout",
+      "tier": "required",
+      "check": "When the chart stacks at narrow widths, the visual order still matches the DOM order.",
+      "fix": "Change the DOM order before using CSS order. Put the title, chart, note, and table in the order a reader needs.",
+      "mechanisms": [
+        "e2e",
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "WCAG22",
+          "title": "Web Content Accessibility Guidelines 2.2",
+          "url": "https://www.w3.org/TR/WCAG22/"
+        },
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        }
+      ],
+      "related": [
+        "R1",
+        "A3"
+      ]
+    },
+    {
+      "id": "S1",
+      "title": "Explain an empty dataset",
+      "category": "states",
+      "tier": "required",
+      "check": "An empty dataset renders an explanation, not an empty box.",
+      "fix": "Show a short message with the reason and the next step. Keep the chart title and source visible.",
+      "mechanisms": [
+        "unit"
+      ],
+      "sources": [
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        },
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        }
+      ],
+      "related": [
+        "S2",
+        "S8"
+      ]
+    },
+    {
+      "id": "S2",
+      "title": "Name the source and retry path on failure",
+      "category": "states",
+      "tier": "required",
+      "check": "A fetch failure names the source and the retry path.",
+      "fix": "Show the source name, a plain error, and a retry control. Announce the change in a live region.",
+      "mechanisms": [
+        "unit"
+      ],
+      "sources": [
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        },
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        }
+      ],
+      "related": [
+        "A7",
+        "S1"
+      ]
+    },
+    {
+      "id": "S3",
+      "title": "Render a single data point clearly",
+      "category": "states",
+      "tier": "required",
+      "check": "A single data point renders and says there is one point.",
+      "fix": "Draw the point and add a note that the chart has one observation. Do not imply a trend.",
+      "mechanisms": [
+        "unit"
+      ],
+      "sources": [
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        },
+        {
+          "key": "D2V",
+          "title": "Data-to-Viz",
+          "url": "https://www.data-to-viz.com/"
+        }
+      ],
+      "related": [
+        "S4"
+      ]
+    },
+    {
+      "id": "S4",
+      "title": "Give a flat series an explicit domain",
+      "category": "states",
+      "tier": "required",
+      "check": "An all-zero or flat series gets an explicit domain instead of a collapsed axis.",
+      "fix": "Set a sensible domain and label it. Add a note when every value is the same.",
+      "mechanisms": [
+        "unit"
+      ],
+      "sources": [
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        },
+        {
+          "key": "ONS_AXES",
+          "title": "ONS: Axes and gridlines",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation/guidance/axes-and-gridlines"
+        }
+      ],
+      "related": [
+        "S3",
+        "D4"
+      ]
+    },
+    {
+      "id": "S5",
+      "title": "State when outliers are excluded",
+      "category": "states",
+      "tier": "recommended",
+      "check": "Outlier handling is stated when points are excluded.",
+      "fix": "Add the exclusion rule to the note and link to the full data when possible.",
+      "mechanisms": [
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        },
+        {
+          "key": "ONS",
+          "title": "ONS Service Manual: Data visualisation",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation"
+        }
+      ],
+      "related": [
+        "N4"
+      ]
+    },
+    {
+      "id": "S6",
+      "title": "Mark stale and partial data",
+      "category": "states",
+      "tier": "required",
+      "check": "Stale or partial data carries its as-of date and states what is missing.",
+      "fix": "Add the date and the missing period or region. Keep the label beside the chart, not only in a tooltip.",
+      "mechanisms": [
+        "unit",
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "ONS",
+          "title": "ONS Service Manual: Data visualisation",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation"
+        },
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        }
+      ],
+      "related": [
+        "D3",
+        "D12"
+      ]
+    },
+    {
+      "id": "S7",
+      "title": "Handle extreme values without clipping",
+      "category": "states",
+      "tier": "required",
+      "check": "Maximum, minimum, negative, and very large values do not clip or overlap.",
+      "fix": "Test the extremes, pad the domain, and move labels away from the plot edge.",
+      "mechanisms": [
+        "unit",
+        "visual"
+      ],
+      "sources": [
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        },
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        }
+      ],
+      "related": [
+        "R2"
+      ]
+    },
+    {
+      "id": "S8",
+      "title": "Separate no data, zero, and missing",
+      "category": "states",
+      "tier": "required",
+      "check": "No data, a true zero, and a missing value are visually and textually distinct.",
+      "fix": "Use a distinct empty state, a zero mark, and a gap or dash for missing. Explain each in the key.",
+      "mechanisms": [
+        "unit",
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "DW_MISSING",
+          "title": "Datawrapper: Missing data in line charts",
+          "url": "https://www.datawrapper.de/academy/missing-data-in-line-charts"
+        },
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        }
+      ],
+      "related": [
+        "S1",
+        "D12",
+        "M6"
+      ]
+    },
+    {
+      "id": "N1",
+      "title": "State the finding in the title",
+      "category": "narrative",
+      "tier": "critical",
+      "check": "The title states the finding, not the variable name.",
+      "fix": "Rewrite the title as a sentence with the subject and the change. Keep it under 15 words.",
+      "mechanisms": [
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        },
+        {
+          "key": "EVER",
+          "title": "Evergreen Data: Data Visualization Checklist",
+          "url": "https://stephanieevergreen.com/wp-content/uploads/2024/08/Data-Viz-Checklist-2024.pdf"
+        },
+        {
+          "key": "ONS_TEXT",
+          "title": "ONS: Chart text",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation/guidance/chart-text"
+        }
+      ],
+      "related": [
+        "D1",
+        "A2"
+      ]
+    },
+    {
+      "id": "N2",
+      "title": "Explain what the chart is for",
+      "category": "narrative",
+      "tier": "critical",
+      "check": "A short note explains what the chart is for and how to read it, in plain language.",
+      "fix": "Add two or three sentences beside the chart. Name the comparison and the one thing to notice.",
+      "mechanisms": [
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        },
+        {
+          "key": "USWDS",
+          "title": "USWDS: Data visualizations",
+          "url": "https://designsystem.digital.gov/components/data-visualizations/"
+        }
+      ],
+      "related": [
+        "A9",
+        "N5"
+      ]
+    },
+    {
+      "id": "N3",
+      "title": "Keep chart text at grade 9 or lower",
+      "category": "narrative",
+      "tier": "critical",
+      "check": "Chart text reads at grade 9 or lower on a Flesch-Kincaid check.",
+      "fix": "Shorten sentences, remove jargon, and split long labels. Re-run the readability check.",
+      "mechanisms": [
+        "manual",
+        "tool"
+      ],
+      "sources": [
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        },
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        }
+      ],
+      "related": [
+        "N2"
+      ]
+    },
+    {
+      "id": "N4",
+      "title": "Do not imply causation without support",
+      "category": "narrative",
+      "tier": "required",
+      "check": "No causal claim appears unless the source supports it.",
+      "fix": "Replace causal verbs with neutral ones. State the confounder or drop the claim.",
+      "mechanisms": [
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        },
+        {
+          "key": "ONS",
+          "title": "ONS Service Manual: Data visualisation",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation"
+        }
+      ],
+      "related": [
+        "E8",
+        "S5"
+      ]
+    },
+    {
+      "id": "N5",
+      "title": "Answer the question the page asks",
+      "category": "narrative",
+      "tier": "required",
+      "check": "The chart answers the question the page asks.",
+      "fix": "Re-read the page heading and the chart. Remove the chart or change the measure if they answer different questions.",
+      "mechanisms": [
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        },
+        {
+          "key": "USWDS",
+          "title": "USWDS: Data visualizations",
+          "url": "https://designsystem.digital.gov/components/data-visualizations/"
+        }
+      ],
+      "related": [
+        "N1",
+        "N2"
+      ]
+    },
+    {
+      "id": "I1",
+      "title": "Give every 3D or interactive view a non-visual equivalent",
+      "category": "interaction",
+      "tier": "critical",
+      "check": "Every 3D or interactive view has a table, text summary, or 2D fallback that carries the same values and relationships.",
+      "fix": "Add a table or a written finding beside the view. Keep the fallback reachable without the canvas.",
+      "mechanisms": [
+        "unit",
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "WCAG22",
+          "title": "Web Content Accessibility Guidelines 2.2",
+          "url": "https://www.w3.org/TR/WCAG22/"
+        },
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        },
+        {
+          "key": "BODYVISTA",
+          "title": "BodyVista: interactive 3D anatomy reference",
+          "url": "https://freedomintelligence.github.io/BodyVista/"
+        }
+      ],
+      "related": [
+        "A3",
+        "E9"
+      ]
+    },
+    {
+      "id": "I2",
+      "title": "Give every pointer action a keyboard path",
+      "category": "interaction",
+      "tier": "critical",
+      "check": "Every action available by pointer has a keyboard path. No action is drag-only or hover-only.",
+      "fix": "Add buttons or key handlers for rotate, pan, zoom, select, and reset. Keep the pointer path as an extra.",
+      "mechanisms": [
+        "e2e"
+      ],
+      "sources": [
+        {
+          "key": "WCAG22",
+          "title": "Web Content Accessibility Guidelines 2.2",
+          "url": "https://www.w3.org/TR/WCAG22/"
+        },
+        {
+          "key": "BODYVISTA",
+          "title": "BodyVista: interactive 3D anatomy reference",
+          "url": "https://freedomintelligence.github.io/BodyVista/"
+        }
+      ],
+      "related": [
+        "A4",
+        "A12"
+      ]
+    },
+    {
+      "id": "I3",
+      "title": "Expose the active state of controls",
+      "category": "interaction",
+      "tier": "required",
+      "check": "Toggles, layers, and tools expose their active state through aria-pressed, aria-selected, or a visible state that matches the DOM.",
+      "fix": "Set the state attribute and keep it in sync with the scene. Do not rely on a colour change alone.",
+      "mechanisms": [
+        "unit",
+        "e2e"
+      ],
+      "sources": [
+        {
+          "key": "WCAG22",
+          "title": "Web Content Accessibility Guidelines 2.2",
+          "url": "https://www.w3.org/TR/WCAG22/"
+        },
+        {
+          "key": "BODYVISTA",
+          "title": "BodyVista: interactive 3D anatomy reference",
+          "url": "https://freedomintelligence.github.io/BodyVista/"
+        }
+      ],
+      "related": [
+        "C5",
+        "I8"
+      ]
+    },
+    {
+      "id": "I4",
+      "title": "Describe and reproduce the current view",
+      "category": "interaction",
+      "tier": "required",
+      "check": "The current camera, section, layer, and selection are described in text and can be reproduced from the URL or a visible summary.",
+      "fix": "Write the view state to the URL or a state panel. Give a reset control a stable default.",
+      "mechanisms": [
+        "manual",
+        "e2e"
+      ],
+      "sources": [
+        {
+          "key": "BODYVISTA",
+          "title": "BodyVista: interactive 3D anatomy reference",
+          "url": "https://freedomintelligence.github.io/BodyVista/"
+        },
+        {
+          "key": "ONS_INTERACTIVE",
+          "title": "ONS: Interactive charts and animations",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation/guidance/interactive-charts-and-animations"
+        }
+      ],
+      "related": [
+        "A11",
+        "I9"
+      ]
+    },
+    {
+      "id": "I5",
+      "title": "Respect reduced motion in the scene",
+      "category": "interaction",
+      "tier": "required",
+      "check": "Camera motion and auto-rotation respect prefers-reduced-motion, and no view moves without a reader action unless it can be paused.",
+      "fix": "Disable auto-rotation under reduced motion. Add pause and reset controls to every moving scene.",
+      "mechanisms": [
+        "unit",
+        "e2e"
+      ],
+      "sources": [
+        {
+          "key": "WCAG22",
+          "title": "Web Content Accessibility Guidelines 2.2",
+          "url": "https://www.w3.org/TR/WCAG22/"
+        },
+        {
+          "key": "BODYVISTA",
+          "title": "BodyVista: interactive 3D anatomy reference",
+          "url": "https://freedomintelligence.github.io/BodyVista/"
+        }
+      ],
+      "related": [
+        "A8",
+        "C11"
+      ]
+    },
+    {
+      "id": "I6",
+      "title": "Announce loading and keep the page usable",
+      "category": "interaction",
+      "tier": "required",
+      "check": "Loading and progress messages are announced, and a heavy scene does not block the first content or the page controls.",
+      "fix": "Show a status message, reserve the scene area, and load models or tiles after the page shell renders.",
+      "mechanisms": [
+        "unit",
+        "e2e",
+        "lighthouse"
+      ],
+      "sources": [
+        {
+          "key": "BODYVISTA",
+          "title": "BodyVista: interactive 3D anatomy reference",
+          "url": "https://freedomintelligence.github.io/BodyVista/"
+        },
+        {
+          "key": "WEB_VITALS",
+          "title": "web.dev: Core Web Vitals",
+          "url": "https://web.dev/articles/vitals"
+        }
+      ],
+      "related": [
+        "R4",
+        "R5",
+        "A7"
+      ]
+    },
+    {
+      "id": "I7",
+      "title": "Keep labels legible and controllable",
+      "category": "interaction",
+      "tier": "required",
+      "check": "Labels and annotations remain legible at every zoom level and can be toggled off.",
+      "fix": "Scale or reposition labels, avoid overlap, and add a label toggle that also works from the keyboard.",
+      "mechanisms": [
+        "visual",
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "BODYVISTA",
+          "title": "BodyVista: interactive 3D anatomy reference",
+          "url": "https://freedomintelligence.github.io/BodyVista/"
+        },
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        }
+      ],
+      "related": [
+        "R2",
+        "I8"
+      ]
+    },
+    {
+      "id": "I8",
+      "title": "Name layer, region, and search controls",
+      "category": "interaction",
+      "tier": "required",
+      "check": "Layer, region, and search controls have accessible names, grouped semantics, and a visible count where the set changes.",
+      "fix": "Use fieldset and legend or a labelled group. Name each control and announce the visible count.",
+      "mechanisms": [
+        "unit",
+        "e2e"
+      ],
+      "sources": [
+        {
+          "key": "BODYVISTA",
+          "title": "BodyVista: interactive 3D anatomy reference",
+          "url": "https://freedomintelligence.github.io/BodyVista/"
+        },
+        {
+          "key": "WCAG22",
+          "title": "Web Content Accessibility Guidelines 2.2",
+          "url": "https://www.w3.org/TR/WCAG22/"
+        }
+      ],
+      "related": [
+        "A9",
+        "I3"
+      ]
+    },
+    {
+      "id": "I9",
+      "title": "Give spatial views an orientation aid",
+      "category": "interaction",
+      "tier": "recommended",
+      "check": "A spatial view shows orientation through an axis gizmo, overview, breadcrumb, or named view presets.",
+      "fix": "Add a small orientation control and a reset. Name the current view in text.",
+      "mechanisms": [
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "BODYVISTA",
+          "title": "BodyVista: interactive 3D anatomy reference",
+          "url": "https://freedomintelligence.github.io/BodyVista/"
+        },
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        }
+      ],
+      "related": [
+        "I4"
+      ]
+    },
+    {
+      "id": "I10",
+      "title": "Set a frame-rate and asset budget",
+      "category": "interaction",
+      "tier": "recommended",
+      "check": "The scene meets a recorded frame-rate and asset budget on a mid-range device, and the measured numbers are written down.",
+      "fix": "Measure on a mid-range phone. Reduce model size, draw distance, or effects until the budget holds.",
+      "mechanisms": [
+        "manual",
+        "lighthouse"
+      ],
+      "sources": [
+        {
+          "key": "BODYVISTA",
+          "title": "BodyVista: interactive 3D anatomy reference",
+          "url": "https://freedomintelligence.github.io/BodyVista/"
+        },
+        {
+          "key": "WEB_VITALS",
+          "title": "web.dev: Core Web Vitals",
+          "url": "https://web.dev/articles/vitals"
+        }
+      ],
+      "related": [
+        "I6",
+        "R5"
+      ]
+    },
+    {
+      "id": "M1",
+      "title": "Give the map a text equivalent",
+      "category": "maps",
+      "tier": "critical",
+      "check": "A map has a text alternative or data table that carries the same values. The map is not the only route to the data.",
+      "fix": "Add a table, a ranked list, or a written summary beside the map. Keep the same values and geography.",
+      "mechanisms": [
+        "unit",
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "WCAG22",
+          "title": "Web Content Accessibility Guidelines 2.2",
+          "url": "https://www.w3.org/TR/WCAG22/"
+        },
+        {
+          "key": "USWDS",
+          "title": "USWDS: Data visualizations",
+          "url": "https://designsystem.digital.gov/components/data-visualizations/"
+        }
+      ],
+      "related": [
+        "A3",
+        "M8"
+      ]
+    },
+    {
+      "id": "M2",
+      "title": "State the projection, extent, and scale",
+      "category": "maps",
+      "tier": "required",
+      "check": "The map states its projection, geographic extent, and scale or a scale bar.",
+      "fix": "Add the projection and extent to the note. Add a scale bar when distance matters.",
+      "mechanisms": [
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        },
+        {
+          "key": "ONS",
+          "title": "ONS Service Manual: Data visualisation",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation"
+        }
+      ],
+      "related": [
+        "D1"
+      ]
+    },
+    {
+      "id": "M3",
+      "title": "Explain the map legend and units",
+      "category": "maps",
+      "tier": "required",
+      "check": "The legend explains the colour or size encoding and its units.",
+      "fix": "Add a labelled legend with units and the class breaks or size scale.",
+      "mechanisms": [
+        "unit",
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "AF_CHARTS",
+          "title": "GOV.UK Analysis Function: Charts, a checklist",
+          "url": "https://analysisfunction.civilservice.gov.uk/policy-store/charts-a-checklist/"
+        },
+        {
+          "key": "USWDS",
+          "title": "USWDS: Data visualizations",
+          "url": "https://designsystem.digital.gov/components/data-visualizations/"
+        }
+      ],
+      "related": [
+        "D2",
+        "C7"
+      ]
+    },
+    {
+      "id": "M4",
+      "title": "Show boundary and geometry vintage",
+      "category": "maps",
+      "tier": "required",
+      "check": "The boundary or geometry vintage and its source are shown.",
+      "fix": "Add the boundary year and source to the source line. Date any geometry that changes.",
+      "mechanisms": [
+        "data",
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "ONS",
+          "title": "ONS Service Manual: Data visualisation",
+          "url": "https://service-manual.ons.gov.uk/data-visualisation"
+        },
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        }
+      ],
+      "related": [
+        "D3"
+      ]
+    },
+    {
+      "id": "M5",
+      "title": "Do not rely on colour alone on a map",
+      "category": "maps",
+      "tier": "critical",
+      "check": "Map classes are not carried by colour alone. Patterns, labels, boundaries, or values provide a second channel.",
+      "fix": "Add a pattern, a boundary, a label, or a value to every class. Check the map in grayscale.",
+      "mechanisms": [
+        "unit",
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "WCAG22",
+          "title": "Web Content Accessibility Guidelines 2.2",
+          "url": "https://www.w3.org/TR/WCAG22/"
+        },
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        }
+      ],
+      "related": [
+        "C5",
+        "C6"
+      ]
+    },
+    {
+      "id": "M6",
+      "title": "Distinguish missing areas from zero",
+      "category": "maps",
+      "tier": "required",
+      "check": "Missing or unreliable areas have a distinct treatment from areas with a true zero.",
+      "fix": "Use a separate fill or hatch for missing areas and name it in the legend.",
+      "mechanisms": [
+        "unit",
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "DW_MISSING",
+          "title": "Datawrapper: Missing data in line charts",
+          "url": "https://www.datawrapper.de/academy/missing-data-in-line-charts"
+        },
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        }
+      ],
+      "related": [
+        "S8",
+        "D12"
+      ]
+    },
+    {
+      "id": "M7",
+      "title": "Make zoom and pan keyboard accessible",
+      "category": "maps",
+      "tier": "required",
+      "check": "Zoom and pan work from the keyboard, a reset control is present, and the map has no keyboard trap.",
+      "fix": "Add zoom buttons, arrow-key pan, and a reset. Keep the map focusable only while it is active.",
+      "mechanisms": [
+        "e2e"
+      ],
+      "sources": [
+        {
+          "key": "WCAG22",
+          "title": "Web Content Accessibility Guidelines 2.2",
+          "url": "https://www.w3.org/TR/WCAG22/"
+        },
+        {
+          "key": "BODYVISTA",
+          "title": "BodyVista: interactive 3D anatomy reference",
+          "url": "https://freedomintelligence.github.io/BodyVista/"
+        }
+      ],
+      "related": [
+        "A4",
+        "I2"
+      ]
+    },
+    {
+      "id": "M8",
+      "title": "Offer a small-screen text view",
+      "category": "maps",
+      "tier": "recommended",
+      "check": "On small screens, the map offers a list or table view that does not require zooming or panning.",
+      "fix": "Add a table or ranked list tab. Keep the map as the visual overview.",
+      "mechanisms": [
+        "e2e",
+        "manual"
+      ],
+      "sources": [
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        },
+        {
+          "key": "USWDS",
+          "title": "USWDS: Data visualizations",
+          "url": "https://designsystem.digital.gov/components/data-visualizations/"
+        }
+      ],
+      "related": [
+        "M1",
+        "R1"
+      ]
+    },
+    {
+      "id": "P1",
+      "title": "List every chart instance with an owner",
+      "category": "process",
+      "tier": "critical",
+      "check": "Every rendered chart has an inventory entry with its page, component, owner, and chart family.",
+      "fix": "Add the chart to the project inventory. Fail the build when a chart component has no entry.",
+      "mechanisms": [
+        "gate"
+      ],
+      "sources": [
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        }
+      ],
+      "related": [
+        "P6"
+      ]
+    },
+    {
+      "id": "P2",
+      "title": "Capture visual snapshots at three widths",
+      "category": "process",
+      "tier": "required",
+      "check": "A visual snapshot exists at 320px, 768px, and 1280px in light and dark mode for every chart that changes appearance.",
+      "fix": "Add the visual test and store baselines from a fixed CI image, not a developer laptop.",
+      "mechanisms": [
+        "visual"
+      ],
+      "sources": [
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        },
+        {
+          "key": "LHCI",
+          "title": "Lighthouse CI configuration",
+          "url": "https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/configuration.md"
+        }
+      ],
+      "related": [
+        "R2",
+        "C8"
+      ]
+    },
+    {
+      "id": "P3",
+      "title": "Run axe on every chart page",
+      "category": "process",
+      "tier": "required",
+      "check": "axe runs on every page with a chart and returns zero serious or critical violations.",
+      "fix": "Add axe to the page test. Fix serious and critical violations before release.",
+      "mechanisms": [
+        "e2e"
+      ],
+      "sources": [
+        {
+          "key": "AXE",
+          "title": "axe-core rule descriptions",
+          "url": "https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md"
+        },
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        }
+      ],
+      "related": [
+        "A1",
+        "A3"
+      ]
+    },
+    {
+      "id": "P4",
+      "title": "Keep a current manual audit",
+      "category": "process",
+      "tier": "required",
+      "check": "The manual audit for the chart family is newer than the rendering code and no more than 12 months old.",
+      "fix": "Re-audit the family when the rendering code changes or the audit expires. Record the date and auditor.",
+      "mechanisms": [
+        "gate"
+      ],
+      "sources": [
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        },
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        }
+      ],
+      "related": [
+        "P5",
+        "P6"
+      ]
+    },
+    {
+      "id": "P5",
+      "title": "Regenerate the audit report",
+      "category": "process",
+      "tier": "required",
+      "check": "The audit report is regenerated when the gate runs, so its rows match the current inventory.",
+      "fix": "Generate the report in the gate. Fail when the committed report differs from the generated one.",
+      "mechanisms": [
+        "gate"
+      ],
+      "sources": [
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        }
+      ],
+      "related": [
+        "P4",
+        "P6"
+      ]
+    },
+    {
+      "id": "P6",
+      "title": "Record a verdict for every rule and chart",
+      "category": "process",
+      "tier": "critical",
+      "check": "The report has one row per chart per rule. A blank row counts as a failure.",
+      "fix": "Record pass, fail, or not applicable with evidence. Do not leave a row blank.",
+      "mechanisms": [
+        "gate"
+      ],
+      "sources": [
+        {
+          "key": "HOUSE",
+          "title": "Chart Checklist house rule",
+          "url": null,
+          "note": "No external source. This checklist sets a project default."
+        },
+        {
+          "key": "CHART",
+          "title": "Chartability",
+          "url": "https://chartability.fizz.studio/"
+        }
+      ],
+      "related": [
+        "P1",
+        "P4"
+      ]
+    }
+  ]
+}
